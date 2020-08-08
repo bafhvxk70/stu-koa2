@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "be": "supervisor ./server/app.js"
+    "be": "node ./server/app.js",
+    "start": "supervisor ./server/app.js"
   },
   "keywords": [],
   "author": "",
