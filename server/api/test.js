@@ -2,7 +2,7 @@ const Router = require('koa-router');
 const router = new Router();
 router
     .get('/api/', (ctx, next) => {
-        ctx.body = 'Hello World!';
+        ctx.body = '雪梅真漂亮，雪梅真可爱!';
     })
     .get('/api/test', (ctx, next) => {
         ctx.body = {
