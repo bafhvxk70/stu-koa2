@@ -2,8 +2,10 @@ const Koa = require('koa');
 const static = require('koa-static');
 const app = new Koa();
 const router = require('./api/test')
-app.use(static(__dirname+'/static'), (ctx, next) => {
-  console.log(ctx, 'ctx')
+app.use(static(__dirname+'/static'), {
+  setHeadears: (res,path,stats) => {
+    res.setHeader('Cache-Control','no-cache')
+  }
 })
 app.use(async (ctx, next) => {
     const start = Date.now();
