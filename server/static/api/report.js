@@ -4,7 +4,7 @@ var _s = Date.now()
 var ms = _s % 1000;
 var t = new Date();
 var _str = t.getHours() +"小时" + t.getMinutes() + "分钟" + t.getSeconds() + "秒" + ms +  "毫秒";
-document.getElementById('report').innerHTML = "我是script标签的时间" + _str;
+document.getElementById('report').innerHTML = "我是script标签的时间---" + _str;
 (function() {
     var wb = document.createElement('script'),
         s = document.getElementsByTagName('head')[0],
