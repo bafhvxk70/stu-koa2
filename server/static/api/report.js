@@ -6,7 +6,7 @@ var t = new Date();
 var _str = t.getHours() +"小时" + t.getMinutes() + "分钟" + t.getSeconds() + "秒" + ms +  "毫秒"
 // var element = document.createTextNode("我是script标签的时间:"+ _str);
 // _body.appendChild(element);
-document.getElementById('report').innerHTML = _str
+document.getElementById('report').innerHTML = "我是script标签的时间" + _str
 (function() {
     var wb = document.createElement('script'),
         s = document.getElementsByTagName('head')[0],
