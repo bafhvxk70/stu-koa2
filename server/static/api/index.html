@@ -44,7 +44,7 @@
 <body>
 <div class="mod" id="dom-loaded"></div>
 <div class="mod" id="page-head"></div>
-<div class="mod" id="page3"></div>
+<div class="mod" id="page-s"></div>
 <div class="mod" id="report1"></div>
 <div class="mod" id="report2"></div>
 <div class="mod" id="mod1"></div>
@@ -53,14 +53,16 @@
 <div class="mod" id="mod4"></div>
 <script>
   document.getElementById('page-head').innerHTML = "我是head执行时间---" + window._headT.s2
-  
+  window._script1 = window.getT()
+  document.getElementById('page-s').innerHTML = "script1---" + window._script1.s2
 </script>
-<script src="https://j1.58cdn.com.cn/weitech/libs/vconsole.min_v0.js" onload="new VConsole()"></script>
 <script type="text/javascript">
-if (window._report1) {
-  console.log('注入sdk比head时间对比', (window._report1.s1 -window._headT.s1))
-  console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
-}
+setTimeout(function () {
+  if (window._report1) {
+    console.log('注入sdk比head时间对比', (window._report1.s1 -window._headT.s1))
+    console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
+  }
+}, 1000)
 </script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod1.js"></script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod2.js"></script>
