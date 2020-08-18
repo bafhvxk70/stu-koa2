@@ -60,9 +60,9 @@
 <script>
   alert('body-alert1');
   alert('body-alert2');
-  document.getElementById('page-head').innerHTML = "我是head执行时间---" + window._headT.s2
-  window._script1 = window.getT()
-  document.getElementById('page-s').innerHTML = "script1---" + window._script1.s2
+  // document.getElementById('page-head').innerHTML = "我是head执行时间---" + window._headT.s2
+  // window._script1 = window.getT()
+  // document.getElementById('page-s').innerHTML = "script1---" + window._script1.s2
 </script>
 <script type="text/javascript">
 // setTimeout(function () {
@@ -71,9 +71,9 @@
 //     console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
 //   }
 // }, 1000)
-document.getElementById('btn').onclick = function () {
-  document.getElementById('native-h').innerHTML = "我是nativeHead----" +  window._nHead
-}
+// document.getElementById('btn').onclick = function () {
+//   document.getElementById('native-h').innerHTML = "我是nativeHead----" +  window._nHead
+// }
 </script>
 <!-- <script type="text/javascript" src="https://tracklog.58.com/referrer_m.js"></script> -->
 <!-- <script type="text/javascript" src="https://j1.58cdn.com.cn/weixin/js/lib/wxjs-1.3.0_v20190325153205.js"></script> -->
@@ -84,7 +84,7 @@ document.getElementById('btn').onclick = function () {
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod3.js"></script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod4.js"></script> -->
 <script>
-
+alert('body-alert3');
 </script>
 </body>
 
