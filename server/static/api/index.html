@@ -2,11 +2,26 @@
 <html lang="zh-CN">
 <head>
   <script>
-  var _s1 = Date.now()
-  var ms1 = _s1 % 1000;
-  var t1 = new Date();
-  window.headT = Date.now()
-  var _str1 = t1.getHours() +"小时" + t1.getMinutes() + "分钟" + t1.getSeconds() + "秒" + ms1 +  "毫秒"
+    // 定义时间戳的全局方法
+    window.getT = function () {
+      var _t = new Date();
+      var _stamp = _t.getTime(); // 时间戳
+      var _ms = _stamp % 1000;
+      var _str = _t.getHours() +"小时" + _t.getMinutes() + "分钟" + _t.getSeconds() + "秒" + _ms +  "毫秒" + _stamp + "时间戳";
+      return {
+        s1: _stamp,
+        s2: _str
+      }
+
+    }
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    window._domLoaded = window.getT()
+    document.getElementById('dom-loaded').innerHTML = "DOMContentLoaded---" + window._domLoaded.s2
+  });
+  // 获取head的时间戳
+  window._headT = window.getT()
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="user-scalable=no" />
@@ -27,8 +42,8 @@
   </style>
 </head>
 <body>
-<div class="mod" id="page1"></div>
-<div class="mod" id="page2"></div>
+<div class="mod" id="dom-loaded"></div>
+<div class="mod" id="page-head"></div>
 <div class="mod" id="page3"></div>
 <div class="mod" id="report1"></div>
 <div class="mod" id="report2"></div>
@@ -37,20 +52,13 @@
 <div class="mod" id="mod3"></div>
 <div class="mod" id="mod4"></div>
 <script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-    var ms = (Date.now()) % 1000;
-    var t = new Date();
-    var _str = t.getHours() +"小时" + t.getMinutes() + "分钟" + t.getSeconds() + "秒" + ms +  "毫秒"
-    document.getElementById('page3').innerHTML = "DOMContentLoaded---" + _str1
-  });
-  var _s = Date.now()
-  var ms = _s % 1000;
-  var t = new Date();
-  var _str = t.getHours() +"小时" + t.getMinutes() + "分钟" + t.getSeconds() + "秒" + ms +  "毫秒"
-  document.getElementById('page1').innerHTML = "我是head执行时间---" + _str1
-  document.getElementById('page2').innerHTML = "我是page---" + _str
+  document.getElementById('page-head').innerHTML = "我是head执行时间---" + window._headT.s2
   
+</script>
+<script src="https://j1.58cdn.com.cn/weitech/libs/vconsole.min_v0.js" onload="new VConsole()"></script>
+<script type="text/javascript">
+console.log('注入sdk比head时间对比', (window._report1.s1 -window._headT.s1))
+console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
 </script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod1.js"></script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod2.js"></script>
