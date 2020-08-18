@@ -20,11 +20,6 @@
     window._domLoaded = window.getT()
     document.getElementById('dom-loaded').innerHTML = "DOMContentLoaded---" + window._domLoaded.s2
   });
-
-  document.addEventListener('load', (event) => {
-    window._loaded2 = window.getT()
-    document.getElementById('dom-loaded2').innerHTML = "load---" + window._loaded2.s2
-  });
   // 获取head的时间戳
   window._headT = window.getT()
   </script>
@@ -57,6 +52,8 @@
 <div class="mod" id="mod2"></div>
 <div class="mod" id="mod3"></div>
 <div class="mod" id="mod4"></div>
+<iframe height="500" src="https://tzbl.58.com/tzbl/noise/index.shtml?p=4DF1E8FB375B2DAF3914C193F43EB327&flag=">
+</iframe>
 <script>
   document.getElementById('page-head').innerHTML = "我是head执行时间---" + window._headT.s2
   window._script1 = window.getT()
