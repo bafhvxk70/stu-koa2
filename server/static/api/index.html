@@ -20,6 +20,11 @@
     window._domLoaded = window.getT()
     document.getElementById('dom-loaded').innerHTML = "DOMContentLoaded---" + window._domLoaded.s2
   });
+
+  document.addEventListener('load', (event) => {
+    window._loaded2 = window.getT()
+    document.getElementById('dom-loaded2').innerHTML = "load---" + window._loaded2.s2
+  });
   // 获取head的时间戳
   window._headT = window.getT()
   </script>
@@ -43,6 +48,7 @@
 </head>
 <body>
 <div class="mod" id="dom-loaded"></div>
+<div class="mod" id="dom-loaded2"></div>
 <div class="mod" id="page-head"></div>
 <div class="mod" id="page-s"></div>
 <div class="mod" id="report1"></div>
