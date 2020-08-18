@@ -42,6 +42,7 @@
   </style>
 </head>
 <body>
+<div class="mod" id="native-h"></div>
 <div class="mod" id="dom-loaded"></div>
 <div class="mod" id="dom-loaded2"></div>
 <div class="mod" id="page-head"></div>
@@ -61,6 +62,7 @@
   document.getElementById('page-s').innerHTML = "script1---" + window._script1.s2
 </script>
 <script type="text/javascript">
+document.getElementById('native-h').innerHTML = "我是nativeHead----" +  window._nHead
 setTimeout(function () {
   if (window._report1) {
     console.log('注入sdk比head时间对比', (window._report1.s1 -window._headT.s1))
