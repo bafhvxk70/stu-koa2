@@ -2,9 +2,10 @@
 <html lang="zh-CN">
 <head>
   <script>
-    var _s1 = Date.now()
+  var _s1 = Date.now()
   var ms1 = _s1 % 1000;
   var t1 = new Date();
+  window.headT = Date.now()
   var _str1 = t1.getHours() +"小时" + t1.getMinutes() + "分钟" + t1.getSeconds() + "秒" + ms1 +  "毫秒"
   </script>
   <meta charset="UTF-8" />
@@ -28,6 +29,7 @@
 <body>
 <div class="mod" id="page1"></div>
 <div class="mod" id="page2"></div>
+<div class="mod" id="page3"></div>
 <div class="mod" id="report1"></div>
 <div class="mod" id="report2"></div>
 <div class="mod" id="mod1"></div>
@@ -35,12 +37,20 @@
 <div class="mod" id="mod3"></div>
 <div class="mod" id="mod4"></div>
 <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    var ms = (Date.now()) % 1000;
+    var t = new Date();
+    var _str = t.getHours() +"小时" + t.getMinutes() + "分钟" + t.getSeconds() + "秒" + ms +  "毫秒"
+    document.getElementById('page3').innerHTML = "DOMContentLoaded---" + _str1
+  });
   var _s = Date.now()
   var ms = _s % 1000;
   var t = new Date();
   var _str = t.getHours() +"小时" + t.getMinutes() + "分钟" + t.getSeconds() + "秒" + ms +  "毫秒"
   document.getElementById('page1').innerHTML = "我是head执行时间---" + _str1
   document.getElementById('page2').innerHTML = "我是page---" + _str
+  
 </script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod1.js"></script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod2.js"></script>
