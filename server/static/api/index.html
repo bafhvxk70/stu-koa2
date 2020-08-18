@@ -62,12 +62,12 @@
   document.getElementById('page-s').innerHTML = "script1---" + window._script1.s2
 </script>
 <script type="text/javascript">
-document.getElementById('native-h').innerHTML = "我是nativeHead----" +  window._nHead
 setTimeout(function () {
   if (window._report1) {
     console.log('注入sdk比head时间对比', (window._report1.s1 -window._headT.s1))
     console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
   }
+  document.getElementById('native-h').innerHTML = "我是nativeHead----" +  window._nHead
 }, 1000)
 </script>
 <!-- <script type="text/javascript" src="https://tracklog.58.com/referrer_m.js"></script> -->
