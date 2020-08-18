@@ -4,7 +4,7 @@ const app = new Koa();
 const router = require('./api/test')
 app.use(static(__dirname+'/static'), {
   setHeadears: (res,path,stats) => {
-    res.setHeader('Cache-Control','no-cache')
+    res.setHeader('Cache-Control','max-age=123123123')
   }
 })
 app.use(async (ctx, next) => {
