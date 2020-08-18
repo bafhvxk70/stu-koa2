@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <script>
+    var _s1 = Date.now()
+  var ms1 = _s1 % 1000;
+  var t1 = new Date();
+  var _str1 = t1.getHours() +"小时" + t1.getMinutes() + "分钟" + t1.getSeconds() + "秒" + ms1 +  "毫秒"
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="user-scalable=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -29,12 +35,12 @@
 <div class="mod" id="mod3"></div>
 <div class="mod" id="mod4"></div>
 <script>
-var _body = document.getElementsByTagName('body')[0];
   var _s = Date.now()
   var ms = _s % 1000;
   var t = new Date();
   var _str = t.getHours() +"小时" + t.getMinutes() + "分钟" + t.getSeconds() + "秒" + ms +  "毫秒"
-  document.getElementById('page1').innerHTML = "我是page---" + _str
+  document.getElementById('page1').innerHTML = "我是head执行时间---" + _str1
+  document.getElementById('page2').innerHTML = "我是page---" + _str
 </script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod1.js"></script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod2.js"></script>
