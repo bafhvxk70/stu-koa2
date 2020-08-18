@@ -58,6 +58,9 @@
 <!-- <iframe height="500" src="https://tzbl.58.com/tzbl/noise/index.shtml?p=4DF1E8FB375B2DAF3914C193F43EB327&flag=">
 </iframe> -->
 <script>
+  document.getElementById('page-head').innerHTML = "我是head执行时间---" + window._headT.s2
+  window._script1 = window.getT();
+  document.getElementById('page-s').innerHTML = "script1---" + window._script1.s2
   alert('body-alert1');
   alert('body-alert2');
   // document.getElementById('page-head').innerHTML = "我是head执行时间---" + window._headT.s2
