@@ -57,8 +57,10 @@
 </script>
 <script src="https://j1.58cdn.com.cn/weitech/libs/vconsole.min_v0.js" onload="new VConsole()"></script>
 <script type="text/javascript">
-console.log('注入sdk比head时间对比', (window._report1.s1 -window._headT.s1))
-console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
+if (window._report1) {
+  console.log('注入sdk比head时间对比', (window._report1.s1 -window._headT.s1))
+  console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
+}
 </script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod1.js"></script>
 <script type="text/javascript" src="https://www.snowsuper.cn/api/mod2.js"></script>
