@@ -1,15 +1,17 @@
 const Router = require('koa-router');
+const log4js = require("log4js");
 const router = new Router();
 router
     .get('/api/', (ctx, next) => {
         ctx.body = '1111';
     })
-    .get('/api/test', (ctx, next) => {
-        ctx.body = {
-            msg:'here is test',
-            query:ctx.query,
-            queryStr:ctx.querystring,
-        }
+    .get('/api/report', (ctx, next) => {
+      logger.info(ctx.query);
+      ctx.body = {
+          msg:'here is test',
+          query:ctx.query,
+          queryStr:ctx.querystring,
+      }
     })
     .post('/api/users', (ctx, next) => {
         ctx.body = 'here is users';

@@ -75,6 +75,14 @@
 //   }
 // }, 1000)
 document.getElementById('btn').onclick = function () {
+  fetch('/api/report', {
+    aa: '111',
+    bb: '222'
+  }).then(() => {
+    console.log('成功')
+  }, () => {
+    console.log('失败')
+  })
   document.getElementById('native-h').innerHTML = "我是nativeHead----" +  window._nHead
 }
 </script>
