@@ -5,7 +5,7 @@ router
     .get('/api/', (ctx, next) => {
         ctx.body = '1111';
     })
-    .get('/api/report', (ctx, next) => {
+    .get('/api/submit', (ctx, next) => {
       logger.info(ctx.query);
       ctx.body = {
           msg:'here is test',
