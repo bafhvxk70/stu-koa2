@@ -76,8 +76,10 @@
 // }, 1000)
 document.getElementById('btn').onclick = function () {
   fetch('/api/submit', {
-    aa: '111',
-    bb: '222'
+    body: JSON.stringify({
+      aa: '111',
+      bb: '222'
+    })
   }).then(() => {
     console.log('成功')
   }, () => {
