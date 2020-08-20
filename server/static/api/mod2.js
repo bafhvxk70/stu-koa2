@@ -1,5 +1,5 @@
 !(function(){
-  window._mod1 = window.getT();
+  window._mod2 = window.getT();
   document.getElementById('mod2').innerHTML = "我是mod2---" +  window._mod2.s2
 }());
 
