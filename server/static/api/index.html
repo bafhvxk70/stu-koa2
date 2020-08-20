@@ -44,6 +44,7 @@
 </head>
 <body>
 <div class="mod" id="btn">点击</div>
+<div class="mod" id="btn1">点击错误上报</div>
 <div class="mod" id="native-h"></div>
 <div class="mod" id="dom-loaded"></div>
 <div class="mod" id="dom-loaded2"></div>
@@ -84,6 +85,10 @@
 // 注入sdk执行时间
 // DOMContentLoaded 触发时间
 // onload 触发时间
+document.getElementById('btn1').onclick = function () {
+  console.log(clickmod)
+}
+
 document.getElementById('btn').onclick = function () {
   
   const obj = {
