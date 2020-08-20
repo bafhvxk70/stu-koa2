@@ -85,7 +85,7 @@ document.getElementById('btn').onclick = function () {
     arr.push(`${a}=${obj[a]}`)
   }
   
-  fetch('https://www.snowsuper.cn/list/submit?'+arr.split('&')).then(() => {
+  fetch('https://www.snowsuper.cn/list/submit?'+arr.join('&')).then(() => {
     console.log('成功')
   }, () => {
     console.log('失败')
