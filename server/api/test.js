@@ -12,7 +12,8 @@ router
         ctx.body = '1111';
     })
     .get('/list/submit', (ctx, next) => {
-      logger.info(ctx.query);
+      console.log(2222, ctx.query);
+      // logger.info(ctx.query);
       ctx.body = {
           msg:'here is test',
           query:ctx.query,
