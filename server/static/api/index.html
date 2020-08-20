@@ -85,16 +85,16 @@
 // DOMContentLoaded 触发时间
 // onload 触发时间
 document.getElementById('btn').onclick = function () {
-  if (!window._report1) {
-    return
-  }
+  
   const obj = {
     loadT: window._domLoaded.s1 - window._headT.s1,
-    reportT: window._report1.s1 - window._headT.s1,
     mod1T: window._mod1.s1 - window._headT.s1,
     mod2T: window._mod2.s1 - window._headT.s1,
     mod3T: window._mod3.s1 - window._headT.s1,
     mod4T: window._mod4.s1 - window._headT.s1,
+  }
+  if (window._report1) {
+    obj['reportT'] = window._report1.s1 - window._headT.s1;
   }
   const arr = []
   for (let a in obj) {
