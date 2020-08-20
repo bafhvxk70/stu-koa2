@@ -8,7 +8,9 @@ const router = require('./api/test')
 //     res.setHeader('Cache-Control',['private','max-age=60000'])
 //   }
 // }
-app.use(static(__dirname+'/static'))
+app.use(static(__dirname+'/static', {
+  maxage: 1110000
+}))
 // app.use(async (ctx, next) => {
 //     const start = Date.now();
 //     await next();
