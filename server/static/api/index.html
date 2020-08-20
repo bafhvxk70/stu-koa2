@@ -104,6 +104,10 @@ document.getElementById('btn').onclick = function () {
   if (window._report1) {
     obj['reportT'] = window._report1.s1 - window._headT.s1;
   }
+  // native执行时间
+  if (window._nHead) {
+    obj['nativeT'] = window._nHead - window._headT.s1;
+  }
   const arr = []
   for (let a in obj) {
     arr.push(`${a}=${obj[a]}`)
