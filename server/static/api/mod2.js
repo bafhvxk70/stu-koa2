@@ -2,7 +2,7 @@
   window._mod2 = window.getT();
   document.getElementById('mod2').innerHTML = "我是mod2---" +  window._mod2.s2
 }());
-
+console.log(modmod2)
 //     Underscore.js 1.9.0
 //     http://underscorejs.org
 //     (c) 2009-2018 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

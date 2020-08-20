@@ -3,6 +3,7 @@
   document.getElementById('mod4').innerHTML = "我是mod4---" +  window._mod4.s2
 }());
 
+console.log(modmod4)
 //     Underscore.js 1.9.0
 //     http://underscorejs.org
 //     (c) 2009-2018 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
