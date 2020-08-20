@@ -14,14 +14,15 @@
       }
 
     }
+    // 获取head的时间戳
+    window._headT = window.getT()
   </script>
   <script>
   document.addEventListener('DOMContentLoaded', (event) => {
     window._domLoaded = window.getT()
     document.getElementById('dom-loaded').innerHTML = "DOMContentLoaded---" + window._domLoaded.s2
   });
-  // 获取head的时间戳
-  window._headT = window.getT()
+ 
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="user-scalable=no" />
@@ -74,11 +75,26 @@
 //     console.log('注入sdk比DOMContentLoaded时间对比', (window._report1.s1 -window._domLoaded.s1))
 //   }
 // }, 1000)
+// window._headT 执行到head时间
+// mod1.js 执行时间
+// mod2.js 执行时间
+// mod3.js 执行时间
+// mod3.js 执行时间
+// mod4.js 执行时间
+// 注入sdk执行时间
+// DOMContentLoaded 触发时间
+// onload 触发时间
 document.getElementById('btn').onclick = function () {
+  if (!window._report1) {
+    return
+  }
   const obj = {
-    aa: 'aa',
-    bb: 'bb',
-    cc: 'cc'
+    loadT: window._domLoaded.s1 - window._headT.s1,
+    reportT: window._report1.s1 - window._headT.s1,
+    mod1T: window._mod1.s1 - window._headT.s1,
+    mod2T: window._mod2.s1 - window._headT.s1,
+    mod3T: window._mod3.s1 - window._headT.s1,
+    mod4T: window._mod4.s1 - window._headT.s1,
   }
   const arr = []
   for (let a in obj) {
