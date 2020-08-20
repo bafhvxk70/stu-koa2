@@ -12,7 +12,8 @@ router
         ctx.body = '1111';
     })
     .get('/list/submit', (ctx, next) => {
-      console.log('android测试', ctx.query);
+      // console.log('android测试', ctx.query);
+      console.log('ios', ctx.query);
       // logger.info(ctx.query);
       ctx.body = {
           msg:'here is test',
