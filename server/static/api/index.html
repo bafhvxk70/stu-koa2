@@ -82,7 +82,7 @@ document.getElementById('btn').onclick = function () {
   }
   const arr = []
   for (let a in obj) {
-    arr.push(`${a}=${ojb[a]}`)
+    arr.push(`${a}=${obj[a]}`)
   }
   
   fetch('https://www.snowsuper.cn/list/submit?'+arr.split('&')).then(() => {
