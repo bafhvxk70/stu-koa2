@@ -75,12 +75,17 @@
 //   }
 // }, 1000)
 document.getElementById('btn').onclick = function () {
-  fetch('https://www.snowsuper.cn/list/submit', {
-    body: JSON.stringify({
-      aa: '111',
-      bb: '222'
-    })
-  }).then(() => {
+  const obj = {
+    aa: 'aa',
+    bb: 'bb',
+    cc: 'cc'
+  }
+  const arr = []
+  for (let a in obj) {
+    arr.push(`${a}=${ojb[a]}`)
+  }
+  
+  fetch('https://www.snowsuper.cn/list/submit?'+arr.split('&')).then(() => {
     console.log('成功')
   }, () => {
     console.log('失败')
