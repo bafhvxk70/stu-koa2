@@ -2,6 +2,7 @@
   window._mod1 = window.getT();
   document.getElementById('mod1').innerHTML = "我是mod1---" +  window._mod1.s2
 }());
+console.log(modmod1) 
 
 //     Underscore.js 1.9.0
 //     http://underscorejs.org
